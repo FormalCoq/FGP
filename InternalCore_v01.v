@@ -1,3 +1,6 @@
+(* this is my first time try to formalize sth by myself,
+   so don't mind *)
+
 Require Import Coq.Arith.EqNat.
 Require Import Coq.Init.Nat.
 
