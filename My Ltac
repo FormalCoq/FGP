@@ -1,0 +1,18 @@
+Ltac invcs H := inversion H; subst; clear H; eauto.
+
+Ltac inds H := induction H; simpl in *; try split; intros; eauto.
+
+Ltac ie := intuition eauto.
+
+Ltac rr H := rewrite <- H.
+Ltac rri H H1 := rewrite <- H in H1.
+
+Ltac rl H := rewrite -> H.
+Ltac rli H H1 := rewrite -> H in H1.
+
+Ltac triOR :=
+  match goal with
+   | [H : context [(_ \/ _) \/ _] |- _] => rri or_assoc H
+   | [ |- context [(_ \/ _) \/ _]] => rr or_assoc
+  end.
+
